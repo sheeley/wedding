@@ -362,7 +362,7 @@ header {
 	position:relative;
 	background-repeat:no-repeat;
 	background-position:center;
-	background-attachment: fixed;
+	/*background-attachment: fixed;*/
 	transform:scale(1);
 	animation:100s ease 0s normal none infinite scale;
 }
