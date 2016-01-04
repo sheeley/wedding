@@ -1,4 +1,4 @@
-﻿(function($){
+(function($){
 	"use strict"; // Start of use strict
 
 	$(document).ready(function() {
@@ -12,50 +12,50 @@
 
 		function send_form(type){
 
-		var name = $("input#name_"+type).val();
-		if (name == "") {
-			$("input#name_"+type).css({border:"1px solid red"});
-			$("input#name_"+type).focus();
-			return false;
-		}
-		var email = $("input#email_"+type).val();
-		if (email == "") {
-			$("input#email_"+type).css({border:"1px solid red"});
-			$("input#email_"+type).focus();
-			return false;
-		}
-		var guest = $("input#guest_"+type).val();
-		if (guest == "") {
-			$("input#guest_"+type).css({border:"1px solid red"});
-			$("input#guest_"+type).focus();
-			return false;
-		}
-		var attending = $("input#attending_"+type).val();
-		if (attending == "") {
-			$("input#attending_"+type).css({border:"1px solid red"});
-			$("input#attending_"+type).focus();
-			return false;
-		}
+			var name = $("input#name_"+type).val();
+			if (name == "") {
+				$("input#name_"+type).css({border:"1px solid red"});
+				$("input#name_"+type).focus();
+				return false;
+			}
+			var email = $("input#email_"+type).val();
+			if (email == "") {
+				$("input#email_"+type).css({border:"1px solid red"});
+				$("input#email_"+type).focus();
+				return false;
+			}
+			var guest = $("input#guest_"+type).val();
+			if (guest == "") {
+				$("input#guest_"+type).css({border:"1px solid red"});
+				$("input#guest_"+type).focus();
+				return false;
+			}
+			var attending = $("input#attending_"+type).val();
+			if (attending == "") {
+				$("input#attending_"+type).css({border:"1px solid red"});
+				$("input#attending_"+type).focus();
+				return false;
+			}
 
-		var dataString = '&name=' + name + '&email=' + email + '&guest=' + guest + '&attending=' + attending;
-		var form = $(this);
-		var str = form.serialize();
-		$.ajax({
-			method: "POST",
-			url: "http://formspree.io/your@mail.com",
-			data: dataString,
-			dataType: "json",
-			success: function() {
-			$('#div_'+type).html("<div id='form_send_message'>Thank you for your request, we will contact you as soon as possible.</div>", 1500);
-		}
-		});
+			var dataString = '&name=' + name + '&email=' + email + '&guest=' + guest + '&attending=' + attending;
+			var form = $(this);
+			var str = form.serialize();
+			$.ajax({
+				method: "POST",
+				url: "http://formspree.io/your@mail.com",
+				data: dataString,
+				dataType: "json",
+				success: function() {
+					$('#div_'+type).html("<div id='form_send_message'>Thank you for your request, we will contact you as soon as possible.</div>", 1500);
+				}
+			});
 		}
 
 		/*ScrollR */
 		if ($(window).width() > 1280) {
-		var s = skrollr.init({
-			forceHeight: false
-		});
+			var s = skrollr.init({
+				forceHeight: false
+			});
 		}
 
 		/*Gallery ColorBox */
@@ -93,7 +93,7 @@
 			}else{
 				$(".youtube").colorbox({iframe:true, innerWidth:320, innerHeight:240});
 			}
-		 });
+		});
 
 		/*Scroll Effect*/
 		$('.intro_down, .go').on("click", function(e){
@@ -123,39 +123,39 @@
 
 		/*OWL Carousel in Our Story*/
 		$(".story_wrapper").owlCarousel({
-	 		navigation : true,	responsive: true, responsiveRefreshRate : 200,	slideSpeed : 200,
-	 		paginationSpeed : 200,	rewindSpeed : 500,	items:3,  itemsTablet: [768,1], autoPlay : true,
+			navigation : true,	responsive: true, responsiveRefreshRate : 200,	slideSpeed : 200,
+			paginationSpeed : 200,	rewindSpeed : 500,	items:3,  itemsTablet: [768,1], autoPlay : true,
 			itemsMobile : [479,1], 	itemsDesktopSmall : [980,1],  itemsDesktop : [1500,2], mouseDrag:false
 		});
 
 		/*Gallery Carousel */
 		$(".gallery_wrapper").owlCarousel({
-	 		navigation : true,	responsive: true, responsiveRefreshRate : 200,	slideSpeed : 200,
-	 		paginationSpeed : 200,	rewindSpeed : 500,	items:3,  itemsTablet: [768,2], autoPlay : true,
+			navigation : true,	responsive: true, responsiveRefreshRate : 200,	slideSpeed : 200,
+			paginationSpeed : 200,	rewindSpeed : 500,	items:3,  itemsTablet: [768,2], autoPlay : true,
 			itemsMobile : [479,1], mouseDrag:false
 		});
 
 		/*Registry Carousel */
 		$(".registry_wrapper").owlCarousel({
-	 		navigation : true, responsive: true, responsiveRefreshRate : 200, slideSpeed : 200, paginationSpeed : 200,
+			navigation : true, responsive: true, responsiveRefreshRate : 200, slideSpeed : 200, paginationSpeed : 200,
 			rewindSpeed : 500,	stopOnHover : true, autoHeight : true, items:3, mouseDrag:false, autoPlay : true
 		});
 
 		/*The Crew Carousel*/
 		$(".guest_wrapper").owlCarousel({
-	 		navigation : true, responsive: true, responsiveRefreshRate : 200, slideSpeed : 200,	paginationSpeed : 200,
+			navigation : true, responsive: true, responsiveRefreshRate : 200, slideSpeed : 200,	paginationSpeed : 200,
 			rewindSpeed : 500, stopOnHover : true, autoHeight : true, items:4, mouseDrag:false, autoPlay : true
 		});
 
 		/*Slider Carousel*/
 		$(".slider").owlCarousel({
-	 		navigation : true, responsive: true, responsiveRefreshRate : 200, slideSpeed : 200,	paginationSpeed : 200,
+			navigation : true, responsive: true, responsiveRefreshRate : 200, slideSpeed : 200,	paginationSpeed : 200,
 			rewindSpeed : 500, stopOnHover : false, autoHeight : true, singleItem:true, mouseDrag:false, autoPlay : true, transitionStyle : "fade"
 		});
 
 		/*Blog Inside*/
 		$(".blog_inside_wrapper").owlCarousel({
-	 		navigation : true, responsive: true, responsiveRefreshRate : 200, slideSpeed : 200,	paginationSpeed : 200,
+			navigation : true, responsive: true, responsiveRefreshRate : 200, slideSpeed : 200,	paginationSpeed : 200,
 			rewindSpeed : 500, stopOnHover : false, autoHeight : true, singleItem:true, mouseDrag:false, autoPlay : true, transitionStyle : "fade"
 		});
 
@@ -182,15 +182,15 @@
 
 
 		$('.modal-launch').on('click', function(e){
-	    var modal = '.' + $(this).attr('modal') + '-modal'
+			var modal = '.' + $(this).attr('modal') + '-modal'
 
-	    $.colorbox({
+			$.colorbox({
 				inline: true,
 				href: modal,
 				height: '100%',
 				width: '80%'
 			})
-	  })
+		})
 
 
 		$('.rsvp-btn').on('click', function(e){
