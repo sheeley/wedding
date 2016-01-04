@@ -2036,3 +2036,7 @@ h1 {
 .hidden-modal .table td {
 	border: 0 !important;
 }
+
+.invalid {
+	border: 1px solid red !important;
+}

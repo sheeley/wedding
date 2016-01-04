@@ -5,51 +5,30 @@
 		"use strict";
 
 		/*RSVP Form*/
-		$(".submit_block_1").click(function() {
-			send_form('block_1');
-			return false;
-		});
+		$("#rsvp_form").submit(function(e){
+			e.preventDefault()
 
-		function send_form(type){
+			var form = $(this)
+			var action = form.attr('action')
+			var nameInput = form.find('input[name="names"]')
+			var names = nameInput.val()
+			var emailInput = form.find('input[name="email"]')
+			var email = emailInput.val()
+			var data = form.serialize()
 
-			var name = $("input#name_"+type).val();
-			if (name == "") {
-				$("input#name_"+type).css({border:"1px solid red"});
-				$("input#name_"+type).focus();
-				return false;
-			}
-			var email = $("input#email_"+type).val();
-			if (email == "") {
-				$("input#email_"+type).css({border:"1px solid red"});
-				$("input#email_"+type).focus();
-				return false;
-			}
-			var guest = $("input#guest_"+type).val();
-			if (guest == "") {
-				$("input#guest_"+type).css({border:"1px solid red"});
-				$("input#guest_"+type).focus();
-				return false;
-			}
-			var attending = $("input#attending_"+type).val();
-			if (attending == "") {
-				$("input#attending_"+type).css({border:"1px solid red"});
-				$("input#attending_"+type).focus();
-				return false;
+			nameInput.toggleClass('invalid', $.trim(names) == '')
+			emailInput.toggleClass('invalid', $.trim(email) == '')
+			if(!names || !email) {
+					return false
 			}
 
-			var dataString = '&name=' + name + '&email=' + email + '&guest=' + guest + '&attending=' + attending;
-			var form = $(this);
-			var str = form.serialize();
-			$.ajax({
-				method: "POST",
-				url: "http://formspree.io/your@mail.com",
-				data: dataString,
-				dataType: "json",
-				success: function() {
-					$('#div_'+type).html("<div id='form_send_message'>Thank you for your request, we will contact you as soon as possible.</div>", 1500);
-				}
-			});
-		}
+			$.post(action, data, function success(resp) {
+				console.log(resp)
+				$('.paper').html('Thanks for RSVPing!')
+			})
+
+			return false
+		})
 
 		/*ScrollR */
 		if ($(window).width() > 1280) {
