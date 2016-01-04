@@ -1269,12 +1269,26 @@ header {
 			position:relative;
 			height:40px!important
 		}
-			.txt_input {
+			.txt_input, .chk_input {
 				width:49%;
 				padding:0;
 				display:inline-block;
 				margin:0 0 10px 0;
 				position:relative
+			}
+
+			.chk_input {
+				width: 19%;
+				vertical-align: top;
+				line-height: 16px;
+			}
+
+			.chk_input input {
+				margin-bottom: 4px;
+			}
+
+			.detail {
+				font-size: 10px;
 			}
 				.txt_input:before {
 					position:absolute;
@@ -1972,3 +1986,53 @@ h1 {
 		width: 100%;
 		height: auto;
 	}
+
+.hidden-modal {
+	display: none;
+}
+
+#colorbox .hidden-modal {
+	display: block;
+	background: #fff;
+	/*padding: 40px 60px;*/
+	height: 100%;
+	width: 100%;
+}
+
+.hidden-modal a {
+	text-decoration: underline;
+}
+
+.hidden-modal .background {
+	height: 100%;
+	width: 100%;
+	opacity: .15;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#colorbox .hidden-modal .content {
+	margin: 40px 60px;
+
+}
+
+#cboxLoadedContent {
+	background: white;
+}
+
+#colorbox .ks-modal .background {
+	background-image: url("/images/kohsamui.jpeg");
+}
+
+.btn.btn-white {
+	color: #fff !important;
+	border-color: #fff !important;
+	padding: 8px 20px;
+	font-size: 30px;
+}
+
+.hidden-modal .table td {
+	border: 0 !important;
+}
