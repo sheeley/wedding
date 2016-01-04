@@ -22,6 +22,8 @@
 					return false
 			}
 
+			$('.submit_block_1').hide()
+
 			$.post(action, data, function success(resp) {
 				console.log(resp)
 				$('.paper').html('Thanks for RSVPing!')
@@ -157,7 +159,9 @@
 		});
 
 		/* Refresh ScrollR */
-		s.refresh($(".guest_wrapper, .our_story"));
+		if(s != null){
+			s.refresh($(".guest_wrapper, .our_story"));
+		}
 
 
 		$('.modal-launch').on('click', function(e){
