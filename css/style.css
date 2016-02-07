@@ -1278,7 +1278,7 @@ header {
 			}
 
 			.chk_input {
-				width: 19%;
+				width: 15%;
 				vertical-align: top;
 				line-height: 16px;
 			}
@@ -1734,6 +1734,11 @@ a:hover i {
 		display: none;
 	}
 
+}
+
+.story p {
+	text-align: left;
+	margin: 0 25% 10px 25%;
 }
 
 @media (max-width:480px){
